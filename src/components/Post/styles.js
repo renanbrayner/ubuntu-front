@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import colors from '../../styles/colorScheme';
 
 const Container = styled.div`
   .post {
@@ -33,6 +34,22 @@ const Container = styled.div`
       width: 80%;
       text-align: center;
       overflow-wrap: break-word;
+    }
+
+    .create-comment {
+      .comment-input {
+        border-radius: 8px;
+        padding: 1rem;
+        border: 1px solid ${colors.backgroundDarkder};
+      } 
+      
+      .post-comment {
+        padding: 1rem;
+        margin-left: 15px;
+        border-radius: 8px;
+        border: none;
+        background-color: ${colors.brown};
+      }
     }
   }
 `

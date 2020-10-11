@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Api from '../../services/api';
 
+import Post from '../Post';
 import Container from './styles';
 import profileImg from '../../assets/Ellipse 88.png';
 
@@ -26,7 +27,7 @@ function Posts() {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <h1>Nova conversa</h1>
           <div className='flex'>
             <input type='text' placeholder='Oque você fez hoje?' onChange={handleChange} value={value}/>
@@ -35,17 +36,7 @@ function Posts() {
       </form>
         {
           posts.map((post) => {
-            return(
-              <div className='post'>
-                <div className='user'>
-                  <img src={profileImg} alt="Paulo Lima"/>
-                  <h1>Paulo Lima</h1>
-                </div>
-                <p className='post-text'>{post}</p>
-                  <p className='time'>11/10/2020</p>
-                {/* ADICIONAR BOTÃO DE VER COMENTARIOS */}
-              </div> 
-            )
+            return <Post profileImg={profileImg} post={post}/>
           }
         )
 

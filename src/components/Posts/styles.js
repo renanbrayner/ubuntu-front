@@ -8,7 +8,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  form {
+  .form {
     background-color: ${colors.backgroundLighter};
     border-radius: 16px;
     padding: 1rem 2rem;
@@ -78,6 +78,23 @@ const Container = styled.div`
       width: 80%;
       text-align: center;
       overflow-wrap: break-word;
+    }
+    .create-comment {
+      .comment-input {
+        border-radius: 8px;
+        padding: 0.3rem;
+        border: 1px solid ${colors.backgroundDarkder};
+      } 
+
+      .post-comment {
+        padding: 0.3rem;
+        margin-left: 15px;
+        border-radius: 8px;
+        border: none;
+        background-color: ${colors.brown};
+        font-weight: bold;
+        color: ${colors.backgroundLighter};
+      }
     }
   }
 `
