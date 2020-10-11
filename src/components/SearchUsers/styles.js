@@ -19,13 +19,16 @@ const Container = styled.div`
       flex-direction: row;
       justify-content: space-between;
       input {
+        font-size: 1.2rem;
         padding: 1rem;
         width: 75%;
       }
       button {
+        font-size: 1.2rem;
         width: 20%;
         border: none;
         background: ${colors.green};
+        color: ${colors.backgroundLighter};
       }
     }
   } 

@@ -8,7 +8,7 @@ const Container = styled.div`
   flex-direction: row;
   
   .search-container {
-    padding-top: 4rem;
+    padding-top: 2rem;
     padding-right: 7rem;
     width: 50%;
     height: 100%;
