@@ -6,6 +6,8 @@ const Container = styled.div`
   width: 100%;
   padding-left: 8rem; 
   padding-top: 2rem;
+  display: grid;
+  place-items: center;
 
   .profile-bar {
     position: fixed;
