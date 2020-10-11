@@ -16,12 +16,12 @@ function Sidebar() {
     return (
       <Container>
         <div className='branding'>
-          <img className='logo' src={logo}/>
+          <img className='logo' src={logo} alt='logo'/>
           <h1 className='title'>Ubuntu</h1>
         </div>
         <ul className='nav-list'>
           <li className='nav-item'>
-            <Link className='nav-link' to='/'>
+            <Link className='nav-link' to='/perfil'>
               <div className='nav-link-icon'>
                 <img className='profile' src={profileImg} alt='Foto de perfil' />
               </div>
@@ -29,7 +29,7 @@ function Sidebar() {
                 Meu Perfil
               </div>
             </Link>
-            <Link className='nav-link' to='/'>
+            <Link className='nav-link' to='/conectar'>
               <div className='nav-link-icon'>
                 <FaGlobeAmericas className='icon' />
               </div>
