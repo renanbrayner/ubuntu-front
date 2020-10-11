@@ -13,6 +13,10 @@ const Container = styled.div`
     margin: 5px 0;
   }
 
+  .error {
+    color: ${colors.red};
+  }
+
   form {
     display: flex;
     flex-direction: row;
