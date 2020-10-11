@@ -39,19 +39,26 @@ function Posts() {
             <button type='submit'>iniciar conversa</button>
           </div>
       </form>
-        {posts.map((post) => {
-          return(
-            <div className='post'>
-              <div className='user'>
-                <img src={post.userprofile} />
-                <h1>{post.username}</h1>
-              </div>
-              <p>{post.body}</p>
-              <p className='time'>{post.time}</p>
-              {/* ADICIONAR BOTÃO DE VER COMENTARIOS */}
-            </div> 
-          )
-        })}
+        {
+          if (posts.length > 0) {
+            posts.map((post) => {
+              return(
+                <div className='post'>
+                  <div className='user'>
+                    <img src={post.userprofile} />
+                    <h1>{post.username}</h1>
+                  </div>
+                  <p>{post.body}</p>
+                  <p className='time'>{post.time}</p>
+                  {/* ADICIONAR BOTÃO DE VER COMENTARIOS */}
+                </div> 
+              )}
+          } else {
+            return <h1>teste</h1>
+          }
+        )
+
+        }
     </Container>
   );
 }

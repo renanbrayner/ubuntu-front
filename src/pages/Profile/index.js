@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Sidebar from '../../components/Sidebar';
 import Posts from '../../components/Posts';
 import Connections from '../../components/Connections';
 import Interests from '../../components/Interests';
@@ -11,7 +10,6 @@ import profileImg from '../../assets/Ellipse 88.png';
 function Profile() {
   return (
     <Container>
-      <Sidebar />
       <Posts />
       <div className='profile-bar'>
         <div className='profile'>

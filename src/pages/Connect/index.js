@@ -2,12 +2,10 @@ import React from 'react';
 
 import Container from './styles';
 import SearchUsers from '../../components/SearchUsers'
-import Sidebar from '../../components/Sidebar';
 
 function Connect() {
   return (
     <Container>
-      <Sidebar />
       <div className='search-container'>
         <SearchUsers />
       </div>

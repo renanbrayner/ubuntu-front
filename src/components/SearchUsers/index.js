@@ -1,76 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import Container from './styles';
 import profileImg from '../../assets/Ellipse 88.png';
 
 function SearchUsers() {
-  const users = [
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-    {
-      profileImg: profileImg,
-      name: 'Paulo',
-      interests: ['Aquilo', 'Isso', 'Aquele outro'],
-      distance: "10km",
-    },
-  ]
+  const [users, setUsers] = useState(null);
+
+  useEffect(() => {
+    setUsers();
+  },[]);
+
+  const handleSubmit = (event) => {
+    try {
+      axios.get("localhost:3333/profile") 
+        .then(res => console.log(res))
+    } catch (error) {
+      console.log(error);
+    }
+    
+    event.preventDefault();
+  }
 
   return (
     <Container>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Procure por quem se interessa pelo mesmo que você</h1>
         <div className='flex'>
           <input type='text' />
           <button type='submit'>Buscar</button>
         </div>
       </form>
-        {users.map((user) => {
+        {/*users.map((user) => {
           return (
             <div className='profile'>
               <div className='userinfo'>
@@ -84,7 +45,7 @@ function SearchUsers() {
               <p>{user.distance}</p>
             </div>
           );
-        })} 
+        })*/} 
     </Container>
   );
 }
