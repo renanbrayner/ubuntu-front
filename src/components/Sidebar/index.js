@@ -1,12 +1,10 @@
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import React from 'react';
-import {
-  FaGlobeAmericas,
-} from 'react-icons/fa';
+import { FaGlobeAmericas } from 'react-icons/fa';
 
 import Container from './styles';
 import profileImg from '../../assets/Ellipse 88.png';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.png';
 
 function Sidebar() {
   const pathname = window.location.pathname;
@@ -44,4 +42,4 @@ function Sidebar() {
   }
 }
 
-export default Sidebar
+export default Sidebar;
