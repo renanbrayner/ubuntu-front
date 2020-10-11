@@ -1,22 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Api from '../../services/api';
+
 import Container from './styles';
-import profileImg from '../../assets/Ellipse 88.png';
 
 function SearchUsers() {
   const [users, setUsers] = useState(null);
+  const [search, setSearch] = useState('');
 
+  //HOOK CHAMADO QUANDO A PÁGINA CARREGA  
   useEffect(() => {
-    setUsers();
+    try {
+      Api.get('/profile')
+        .then(res => {
+          const users = res.data;
+          setUsers(users);
+        })
+    } catch(err) {
+      console.log(err);
+    }
   },[]);
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSearch(value);
+  }
 
   const handleSubmit = (event) => {
     try {
-      axios.get("localhost:3333/profile") 
-        .then(res => console.log(res))
-    } catch (error) {
-      console.log(error);
+      //TODO: FAZER A CHAMADA FILTRANDO INTERESSES
+      //A VARIAVEL COM O TEXTO DO INPUT SE ACHAMA: search
+      axios.get("/profile") 
+        .then(res => {
+          const users = res.data
+          setUsers(users);
+        })
+    } catch (err) {
+      console.log(err);
     }
     
     event.preventDefault();
@@ -27,7 +48,7 @@ function SearchUsers() {
       <form onSubmit={handleSubmit}>
         <h1>Procure por quem se interessa pelo mesmo que você</h1>
         <div className='flex'>
-          <input type='text' />
+          <input type='text' value={search} onChange={handleChange} />
           <button type='submit'>Buscar</button>
         </div>
       </form>

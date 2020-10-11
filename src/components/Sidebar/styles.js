@@ -59,7 +59,7 @@ const Container = styled.div`
       color: ${colors.brown};
       margin: auto;
       opacity: 0;
-      transform: translateX(-300px);
+      transform: translateX(-600px);
       transition: opacity 100ms;
     }
   }

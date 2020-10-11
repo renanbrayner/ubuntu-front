@@ -1,35 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+import Api from '../../services/api';
 
 import Container from './styles';
 import profileImg from '../../assets/Ellipse 88.png';
 
 function Posts() {
-  const posts = [
-    {
-      userprofile: profileImg,
-      username: 'Paulo Lima',
-      body: 'Hoje fiz uma parada rocheda.',
-      time: '10/10/2020 - 11:50'
-    },
-    {
-      userprofile: profileImg,
-      username: 'Paulo Lima',
-      body: 'Hoje fiz uma parada rocheda.',
-      time: '10/10/2020 - 11:50'
-    },
-    {
-      userprofile: profileImg,
-      username: 'Paulo Lima',
-      body: 'Hoje fiz uma parada rocheda.',
-      time: '10/10/2020 - 11:50'
-    },
-    {
-      userprofile: profileImg,
-      username: 'Paulo Lima',
-      body: 'Hoje fiz uma parada rocheda.',
-      time: '10/10/2020 - 11:50'
-    },
-  ];
+  const [posts, setPosts] = useState([]);
+  
+  useEffect(() => {
+    //get Api.get(ROTA DE LISTAR POSTS)
+  },[]);
+
   return (
     <Container>
       <form>
@@ -44,7 +27,7 @@ function Posts() {
             return(
               <div className='post'>
                 <div className='user'>
-                  <img src={post.userprofile} />
+                  <img src={post.userprofile} alt={post.username}/>
                   <h1>{post.username}</h1>
                 </div>
                 <p>{post.body}</p>

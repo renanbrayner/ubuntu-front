@@ -9,7 +9,7 @@ function Landing() {
   return (
     <Container>
       <div className='text'>
-        <h1 className='title'><img className='logo' src={logo}></img>Ubuntu</h1>
+        <h1 className='title'><img className='logo' src={logo} alt='logo'></img>Ubuntu</h1>
         <p className='paragraph'>
           Uma plataforma para auxiliar na construção do seu<br/>
           PPVE, buscar outras pessoas com os mesmos<br/>

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FaGlobeAmericas } from 'react-icons/fa';
+import axios from 'axios';
+
+import Api from '../../services/api';
 
 import Container from './styles';
 import profileImg from '../../assets/Ellipse 88.png';
@@ -8,9 +11,11 @@ import logo from '../../assets/logo.png';
 
 function Sidebar() {
   const [pathname, setPathname] = useState(window.location.pathname);
+  const [avatar, setAvatar] = useState();
+  const user = localStorage.getItem('user');
 
   const history = useHistory();
-  console.log(history);
+
 
   useEffect(() => {
     history.listen(location => {
@@ -19,8 +24,23 @@ function Sidebar() {
   },[history])
 
   if(pathname === "/" || pathname === "/cadastro") {
+
     return <div className='teste'/>
+
   } else {
+
+    try {
+      Api.get('/avatar', user)
+        .then(res => {
+          const avatar = res.data;
+          console.log('avatar');
+          console.log(avatar);
+        })
+    } catch(err) {
+      console.log('teste');
+      console.log(err);
+    }
+
     return (
       <Container>
         <div className='branding'>

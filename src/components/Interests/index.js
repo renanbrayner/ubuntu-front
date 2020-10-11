@@ -1,24 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   FaPlus,
 } from 'react-icons/fa';
 
 import Container from './styles';
+import Api from '../../services/api';
 
 function Interests() {
-  let interests = ["Jogar Bola", "JiuJitsu", "Malhar"];
-  //let interests = [];
+  let [interests, setInterests] = useState([]);
+  let [value, setValue] = useState('');
 
-  const handleSubmit = () => {
-    // FAZER CÓDIGO ENVIAR INTERESSE BANCO DE DADOS
+  useEffect(() => {
+    try {
+      Api.get('/interest')
+        .then(res => {
+          const interests = res.data.interest_description;
+          console.log(res);
+        })
+    } catch(err) {
+      console.log(err);
+    }
+  },[])
+
+  const handleSubmit = (e) => {
+    try {
+      Api.post('/interest', value);
+      setInterests([...interests, value])
+    } catch(err) {
+      console.log(err);
+    }
+      
+    e.preventDefault();
+  }
+
+  const handleChange = (e) => {
+    let value = e.target.value
+    setValue(value);
   }
 
   return (
     <Container>
       <h1>Meus insteresses</h1>
-        { interests.length > 0 ? interests.map((el) => <p>{el}</p>) : <p className='error'>Ops! Parece que você não tem nenhum interesse.</p>}
+        { interests.length > 0 ? interests.map((el, index) => <p key={index}>{el}</p>) : <p className='error'>Ops! Parece que você não tem nenhum interesse.</p>}
         <form onSubmit={handleSubmit}>
-        <input type='text' placeholder='adicionar interesse'/>
+        <input type='text' placeholder='adicionar interesse' value={value} onChange={handleChange}/>
         <button type='submit'><FaPlus/></button>
       </form>
     </Container>

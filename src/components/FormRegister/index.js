@@ -31,7 +31,7 @@ class FormRegister extends Component {
   };
 
   handleSubmit = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
 
     const { name, email, phone, password, confirmPassword } = this.state.form;
 

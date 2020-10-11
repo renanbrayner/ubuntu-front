@@ -8,9 +8,10 @@ const Container = styled.div`
     padding: 1rem 2rem; 
     margin-bottom: 15px;
     border-radius: 16px;
+    box-shadow: 0px 2px 10px 0px ${colors.backgroundDarkder};
 
     h1{
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       margin-bottom: 15px;
     }
 
@@ -22,11 +23,14 @@ const Container = styled.div`
         font-size: 1.2rem;
         padding: 1rem;
         width: 75%;
+        border: 1px solid ${colors.backgroundDarkder};
+        border-radius: 8px;
       }
       button {
         font-size: 1.2rem;
         width: 20%;
         border: none;
+        border-radius: 8px;
         background: ${colors.green};
         color: ${colors.backgroundLighter};
       }
@@ -41,6 +45,7 @@ const Container = styled.div`
     background: ${colors.backgroundLighter};
     margin-bottom: 15px;
     border-radius: 16px; 
+    box-shadow: 0px 2px 10px 0px ${colors.backgroundDarkder};
 
     .userinfo {
       display: flex;

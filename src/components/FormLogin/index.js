@@ -34,6 +34,8 @@ class FormLogin extends Component {
       console.log(response);
       const { token, user } = response.data;
 
+      localStorage.setItem('user', user.id);
+
       Api.defaults.headers.Authorization = `Bearer ${token}`;
       this.redirectToProfile();
     } catch (err) {

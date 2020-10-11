@@ -26,9 +26,13 @@ const Container = styled.div`
       font-size: 1.2rem;
       padding: 8px;
       width: 75%;
+      border-radius: 8px;
+      border: 1px solid ${colors.backgroundDarkder};
+      outline: none;
     }
 
     button {
+      border-radius: 8px;
       width: 20%;
       border: 0;
       background-color: ${colors.green};
