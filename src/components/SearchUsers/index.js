@@ -4,9 +4,26 @@ import axios from 'axios';
 import Api from '../../services/api';
 
 import Container from './styles';
+import profilePic from '../../assets/Ellipse 88.png'
 
 function SearchUsers() {
-  const [users, setUsers] = useState(null);
+  const [users, setUsers] = useState([
+    {
+      profileImg: profilePic,
+      name: 'Paulo',
+      interests: ['teste', 'teste'],
+    },
+    {
+      profileImg: profilePic,
+      name: 'Renan',
+      interests: ['teste', 'teste'],
+    },
+    {
+      profileImg: profilePic,
+      name: 'Thalys',
+      interests: ['teste', 'teste'],
+    },
+  ]);
   const [search, setSearch] = useState('');
 
   //HOOK CHAMADO QUANDO A PÁGINA CARREGA  
@@ -34,7 +51,7 @@ function SearchUsers() {
       axios.get("/profile") 
         .then(res => {
           const users = res.data
-          setUsers(users);
+          //setUsers(users);
         })
     } catch (err) {
       console.log(err);
@@ -52,7 +69,7 @@ function SearchUsers() {
           <button type='submit'>Buscar</button>
         </div>
       </form>
-        {/*users.map((user) => {
+        {users.map((user) => {
           return (
             <div className='profile'>
               <div className='userinfo'>
@@ -66,7 +83,7 @@ function SearchUsers() {
               <p>{user.distance}</p>
             </div>
           );
-        })*/} 
+        })} 
     </Container>
   );
 }

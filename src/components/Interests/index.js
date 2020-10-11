@@ -26,7 +26,8 @@ function Interests() {
   const handleSubmit = (e) => {
     try {
       Api.post('/interest', value);
-      setInterests([...interests, value])
+      setInterests([...interests, value]);
+      setValue('');
     } catch(err) {
       console.log(err);
     }

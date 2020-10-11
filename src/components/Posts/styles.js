@@ -73,6 +73,12 @@ const Container = styled.div`
     .time {
       margin-left: auto;
     }
+    .post-text {
+      padding: 0.5rem;
+      width: 80%;
+      text-align: center;
+      overflow-wrap: break-word;
+    }
   }
 `
 
