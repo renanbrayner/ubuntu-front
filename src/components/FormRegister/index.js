@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import Form from '../../styles/Form';
 
@@ -16,6 +16,11 @@ class FormRegister extends Component {
     },
   };
 
+  redirectToHome = () => {
+    const { history } = this.props;
+    if(history) history.push('/');
+  }
+
   handleChange = (e) => {
     let form = this.state.form;
     form[e.target.name] = e.target.value;
@@ -26,7 +31,7 @@ class FormRegister extends Component {
   };
 
   handleSubmit = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
 
     const { name, email, phone, password, confirmPassword } = this.state.form;
 
@@ -42,6 +47,7 @@ class FormRegister extends Component {
 
     try {
       Api.post('/users', { data });
+      this.redirectToHome()
     } catch (err) {
       alert('erro: ', err);
     }
@@ -113,4 +119,4 @@ class FormRegister extends Component {
   }
 }
 
-export default FormRegister;
+export default withRouter(FormRegister);

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FaGlobeAmericas } from 'react-icons/fa';
 
 import Container from './styles';
@@ -7,9 +7,19 @@ import profileImg from '../../assets/Ellipse 88.png';
 import logo from '../../assets/logo.png';
 
 function Sidebar() {
-  const pathname = window.location.pathname;
+  const [pathname, setPathname] = useState(window.location.pathname);
+
+  const history = useHistory();
+  console.log(history);
+
+  useEffect(() => {
+    history.listen(location => {
+      setPathname(window.location.pathname);
+    })
+  },[history])
+
   if(pathname === "/" || pathname === "/cadastro") {
-    return null
+    return <div className='teste'/>
   } else {
     return (
       <Container>

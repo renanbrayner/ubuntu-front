@@ -16,6 +16,10 @@ const Container = styled.div`
   justify-content: center;
   transition: width 200ms ease-in-out;
 
+  .invisible {
+    display: none;
+  }
+
   :hover {
     width: 22rem;
     .nav-link-text {

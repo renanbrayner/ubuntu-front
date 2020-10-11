@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import Form from '../../styles/Form';
 
@@ -12,6 +12,11 @@ class FormLogin extends Component {
       password: '',
     },
   };
+
+  redirectToProfile = () => {
+    const { history } = this.props;
+    if(history) history.push('/perfil');
+  }
 
   handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +35,7 @@ class FormLogin extends Component {
       const { token, user } = response.data;
 
       Api.defaults.headers.Authorization = `Bearer ${token}`;
+      this.redirectToProfile();
     } catch (err) {
       alert('erro: ', err);
     }
@@ -84,4 +90,4 @@ class FormLogin extends Component {
   }
 }
 
-export default FormLogin;
+export default withRouter(FormLogin);
