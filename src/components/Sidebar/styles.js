@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../styles/colorScheme';
 
-const sidebarWidth = '6'
+const sidebarWidth = '6';
 
 const Container = styled.div`
   position: fixed;
@@ -9,7 +9,7 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
   width: ${sidebarWidth}rem;
-  background-color: ${colors.backgroundLighter}; 
+  background-color: ${colors.backgroundLighter};
   box-shadow: 2px 0px 10px 0px ${colors.backgroundDarkder};
   display: flex;
   flex-direction: column;
@@ -51,6 +51,7 @@ const Container = styled.div`
     }
 
     .title {
+      font-size: 60px;
       color: ${colors.brown};
       margin: auto;
       opacity: 0;
@@ -95,7 +96,7 @@ const Container = styled.div`
           background-color: ${colors.backgroundLighter};
         }
       }
-      :last-child(){
+      :last-child() {
         margin-bottom: 50vh;
       }
     }
@@ -108,6 +109,6 @@ const Container = styled.div`
     transition: opacity 100ms;
     font-size: 1.4rem;
   }
-`
+`;
 
-export default Container
+export default Container;
