@@ -15,8 +15,8 @@ function Interests() {
     try {
       Api.get('/interest')
         .then(res => {
-          const interests = res.data.interest_description;
-          console.log(res);
+          const interests = res.data;
+          console.log(interests);
         })
     } catch(err) {
       console.log(err);

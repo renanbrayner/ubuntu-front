@@ -18,7 +18,7 @@ class FormRegister extends Component {
 
   redirectToHome = () => {
     const { history } = this.props;
-    if(history) history.push('/');
+    if(history) history.push('/cadastro-perfil');
   }
 
   handleChange = (e) => {
@@ -108,7 +108,7 @@ class FormRegister extends Component {
             onChange={this.handleChange}
           />
           <button className='submit' type='submit'>
-            Cadastrar
+            Enviar
           </button>
           <Link className='cancel' to='/'>
             Cancelar

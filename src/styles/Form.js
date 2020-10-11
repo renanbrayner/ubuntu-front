@@ -2,6 +2,43 @@ import styled from 'styled-components';
 import colors from './colorScheme';
 
 const Form = styled.div`
+  .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .flex-item {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .input {
+      width: 100%;
+    }
+  }
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .input {
+      width: 90%;
+      margin: 0;
+    }
+
+    .label {
+      margin-bottom: 15px;
+    }
+  }
 
   .form {
     padding: 4rem 2.5rem;

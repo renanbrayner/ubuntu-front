@@ -23,7 +23,7 @@ function Sidebar() {
     })
   },[history])
 
-  if(pathname === "/" || pathname === "/cadastro") {
+  if(pathname === "/" || pathname === "/cadastro" || pathname === '/cadastro-perfil') {
 
     return <div className='teste'/>
 
